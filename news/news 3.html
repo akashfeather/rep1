@@ -168,29 +168,7 @@
     <section class="py-20 bg-gradient-to-b from-transparent to-black/20">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center">Related <span class="gradient-text">Articles</span></h2>
-            <div class="grid md:grid-cols-3 gap-8 related-articles" style="opacity: 1; visibility: visible;">
-                <a href="news-ml-deployment.html" class="glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500">
-                    <div class="h-48" style="background-image: url('../assets/Custom Software Development.png'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">ML Model Deployment Strategies</h3>
-                        <p class="text-gray-400 text-sm">Best practices for production ML</p>
-                    </div>
-                </a>
-                <a href="news-gpt4-business.html" class="glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500">
-                    <div class="h-48" style="background-image: url('../assets/Custom Software Development.png'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">GPT-4 in Business Applications</h3>
-                        <p class="text-gray-400 text-sm">Enterprise use cases for LLMs</p>
-                    </div>
-                </a>
-                <a href="news-edge-computing.html" class="glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500">
-                    <div class="h-48" style="background-image: url('../assets/Custom Software Development.png'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">The Rise of Edge Computing</h3>
-                        <p class="text-gray-400 text-sm">Real-time AI at the edge</p>
-                    </div>
-                </a>
-            </div>
+            <div id="related-news" class="grid md:grid-cols-3 gap-8 related-articles" aria-live="polite"></div>
         </div>
     </section>
 
@@ -323,6 +301,50 @@
                 }
             });
         });
+
+        // Load related articles (next two in the index order, wrapping around)
+        async function loadRelatedArticles() {
+            try {
+                const resp = await fetch('news-index.json');
+                if (!resp.ok) throw new Error('Failed to load news index');
+                const articles = await resp.json();
+                const currentFile = decodeURIComponent(location.pathname.split('/').pop());
+                const idx = articles.findIndex(a => a.filename === currentFile || a.url.split('/').pop() === currentFile);
+                if (idx === -1) return;
+                const related = [];
+                for (let i = 1; i <= 2; i++) {
+                    related.push(articles[(idx + i) % articles.length]);
+                }
+                const container = document.getElementById('related-news');
+                container.innerHTML = '';
+                related.forEach(a => {
+                    const link = document.createElement('a');
+                    link.href = a.url;
+                    link.className = 'glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500';
+                    const thumb = a.thumbnail ? ('../' + a.thumbnail) : '../assets/Custom%20Software%20Development.png';
+                    link.innerHTML = `
+                        <div class="h-48" style="background-image: url('${thumb}'); background-size: cover; background-position: center;"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">${a.title}</h3>
+                            <p class="text-gray-400 text-sm">${a.description}</p>
+                        </div>
+                    `;
+                    container.appendChild(link);
+                });
+
+                // animate related items
+                gsap.set('#related-news > *', { opacity: 0, y: 50, scale: 0.95 });
+                gsap.to('#related-news > *', {
+                    scrollTrigger: { trigger: '#related-news', start: 'top 85%' },
+                    y: 0, scale: 1, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out'
+                });
+
+            } catch (err) {
+                console.error('Error loading related articles', err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadRelatedArticles);
     </script>
 </body>
 </html>
