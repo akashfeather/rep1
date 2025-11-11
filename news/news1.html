@@ -320,7 +320,8 @@
                 container.innerHTML = '';
                 related.forEach(a => {
                     const link = document.createElement('a');
-                    link.href = a.url;
+                    // article pages live inside /news/, so make links resolve correctly
+                    link.href = '../' + a.url;
                     link.className = 'glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500';
                     const thumb = a.thumbnail ? ('../' + a.thumbnail) : '../assets/Custom%20Software%20Development.png';
                     link.innerHTML = `
