@@ -74,10 +74,16 @@ async function main(){
         let thumbnail = await extractThumbnail(content) || '';
         // normalize thumbnail paths so they work from site root when consumed by news.html
         if(thumbnail){
-          // if starts with ../ or ./ remove and prefix with '/'
-          if(thumbnail.startsWith('../')) thumbnail = '/' + thumbnail.replace(/^\.\.\//, '');
-          else if(thumbnail.startsWith('./')) thumbnail = '/' + thumbnail.replace(/^\.\//, '');
-          else if(!/^https?:\/\//i.test(thumbnail) && !thumbnail.startsWith('/')) thumbnail = '/' + thumbnail;
+          // Normalize thumbnail to a relative path (no leading slash) so it resolves correctly
+          // when the site is deployed under a subpath (e.g. /rep1/).
+          // Remove ../ or ./ prefixes and any leading '/'
+          thumbnail = thumbnail.replace(/^\.\.\//, '');
+          thumbnail = thumbnail.replace(/^\.\//, '');
+          thumbnail = thumbnail.replace(/^\//, '');
+          // URL-encode spaces and other characters so thumbnails work in URLs
+          if(!/^https?:\/\//i.test(thumbnail)){
+            thumbnail = encodeURI(thumbnail);
+          }
         }
         // category: try meta name=category
         let category = null;
