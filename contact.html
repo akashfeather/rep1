@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TechVision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+        <!-- SEO: Meta description, Open Graph and JSON-LD Organization -->
+        <meta name="description" content="Contact TechVision to discuss your software needs. Reach our team for enquiries, partnerships, and support.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="/contact.html">
+        <meta property="og:title" content="Contact TechVision - Get in Touch">
+        <meta property="og:description" content="Contact TechVision to discuss your software needs. Reach our team for enquiries, partnerships, and support.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/contact.html">
+        <meta property="og:image" content="/assets/logo.svg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Contact TechVision - Get in Touch">
+        <meta name="twitter:description" content="Contact TechVision to discuss your software needs. Reach our team for enquiries, partnerships, and support.">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "TechVision",
+            "url": "/",
+            "logo": "/assets/logo.svg"
+        }
+        </script>
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <nav class="fixed top-0 left-0 right-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="w-32">
+                    <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Services</a>
+                    <a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">News</a>
+                    <a href="careers.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Careers</a>
+                    <a href="contact.html" class="text-white hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white mobile-menu-button"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+            <div class="md:hidden mobile-menu hidden">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="index.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="services.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Services</a>
+                    <a href="about.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="news.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">News</a>
+                    <a href="careers.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Careers</a>
+                    <a href="contact.html" class="block text-white hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="assets/js/mobile-menu.js"></script>
+
+    <section class="pt-32 pb-20 relative">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 hero-title">Get in <span class="gradient-text">Touch</span></h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto hero-subtitle">Let's discuss how we can help transform your business with innovative technology solutions</p>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="form-container">
+                    <h2 class="text-3xl font-bold mb-8">Send Us a Message</h2>
+                    <form class="space-y-6" id="contactForm" action="https://script.google.com/macros/s/AKfycbzHp6iXwqd77qpYQIzcBJRMPbzhOYWzdF1NmaMlmat8kA2HHWLozNOvFMVw9TJKXuMq/exec" method="POST">
+                        <div class="form-group">
+                            <label class="block text-sm font-semibold mb-2">Your Name</label>
+                            <input name="name" type="text" class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="block text-sm font-semibold mb-2">Email Address</label>
+                            <input name="email" type="email" class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="block text-sm font-semibold mb-2">Company</label>
+                            <input name="company" type="text" class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="Your Company" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="block text-sm font-semibold mb-2">Service Interest</label>
+                            <select name="service" class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" required>
+                                <option value="">Select a service</option>
+                                <option value="custom-software">Custom Software Development</option>
+                                <option value="mobile-apps">Mobile App Development</option>
+                                <option value="cloud">Cloud Solutions</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="security">Cybersecurity</option>
+                                <option value="analytics">Data Analytics</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea name="message" rows="5" class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button id="submitBtn" type="submit" class="w-full px-8 py-5 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105" style="background: var(--gradient-primary);">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                        <p id="formStatus" class="text-sm text-left mt-2 text-gray-400"></p>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
+                    <div class="space-y-6 mb-12">
+                        <div class="glass rounded-2xl p-6 flex items-start contact-card">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style="background: var(--gradient-primary);">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Office Location</h3>
+                                <p class="text-gray-400">123 Tech Street, Silicon Valley<br>San Francisco, CA 94105</p>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex items-start contact-card">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style="background: var(--gradient-primary);">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Phone</h3>
+                                <p class="text-gray-400">+1 (555) 123-4567<br>Mon-Fri, 9am-6pm PST</p>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex items-start contact-card">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style="background: var(--gradient-primary);">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Email</h3>
+                                <p class="text-gray-400">hello@techvision.com<br>support@techvision.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 faq-header">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <div id="faqList" class="max-w-3xl mx-auto space-y-4">
+                <div class="glass rounded-2xl p-6 cursor-pointer hover:scale-102 transition-all duration-300 faq-item">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-semibold text-lg">What is your typical project timeline?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <p class="text-gray-400 mt-4 leading-relaxed">Project timelines vary based on scope and complexity, but most projects range from 3-6 months. We provide detailed timelines during our initial consultation.</p>
+                </div>
+                <div class="glass rounded-2xl p-6 cursor-pointer hover:scale-102 transition-all duration-300 faq-item">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-semibold text-lg">Do you offer ongoing support and maintenance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <p class="text-gray-400 mt-4 leading-relaxed">Yes, we provide comprehensive support and maintenance packages to ensure your software continues to perform optimally after launch.</p>
+                </div>
+                <div class="glass rounded-2xl p-6 cursor-pointer hover:scale-102 transition-all duration-300 faq-item">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-semibold text-lg">What industries do you specialize in?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <p class="text-gray-400 mt-4 leading-relaxed">We have experience across multiple industries including healthcare, finance, e-commerce, education, and more. Our diverse expertise allows us to adapt to any sector.</p>
+                </div>
+                <div class="glass rounded-2xl p-6 cursor-pointer hover:scale-102 transition-all duration-300 faq-item">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-semibold text-lg">How do you ensure project security?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <p class="text-gray-400 mt-4 leading-relaxed">We follow industry-standard security practices, including secure coding, regular audits, and compliance with relevant regulations. We sign NDAs and implement robust data protection measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="block mb-4 w-32">
+                        <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">Innovating tomorrow's software solutions today.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Careers</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors">News</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Custom Software</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Cloud Solutions</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">AI & ML</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechVision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Entry animations
+            gsap.from('.hero-title', { y: 100, opacity: 0, duration: 1, ease: 'power3.out' });
+            gsap.from('.hero-subtitle', { y: 50, opacity: 0, duration: 0.8, delay: 0.3, ease: 'power2.out' });
+
+            gsap.from('.form-group', {
+                scrollTrigger: { trigger: '.form-container', start: 'top 80%', toggleActions: 'play none none reverse' },
+                x: -50, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out'
+            });
+
+            gsap.from('.contact-card', {
+                scrollTrigger: { trigger: '.contact-info', start: 'top 80%', toggleActions: 'play none none reverse' },
+                x: 50, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out'
+            });
+
+            gsap.from('.social-section', {
+                scrollTrigger: { trigger: '.social-section', start: 'top 80%', toggleActions: 'play none none reverse' },
+                scale: 0.9, opacity: 0, duration: 0.8, ease: 'power2.out'
+            });
+
+            // FAQ: set initial state and animate using explicit trigger id
+            const faqItems = document.querySelectorAll('.faq-item');
+            gsap.set(faqItems, { opacity: 0, y: 30 });
+
+            gsap.to('.faq-item', {
+                scrollTrigger: {
+                    trigger: '#faqList',
+                    start: 'top 85%',
+                    end: 'bottom center',
+                    toggleActions: 'play complete none reverse'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: { amount: 0.6, from: 'start' },
+                ease: 'power3.out'
+            });
+
+            // FAQ expand/collapse interaction
+            faqItems.forEach(item => {
+                const answer = item.querySelector('p');
+                // Collapse answers initially
+                answer.style.maxHeight = '0px';
+                answer.style.overflow = 'hidden';
+                answer.style.transition = 'max-height 0.35s ease';
+
+                item.addEventListener('click', () => {
+                    const icon = item.querySelector('i');
+                    if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                        answer.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Contact form submit (POST to Apps Script endpoint using XHR)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const form = this;
+                    const statusEl = document.getElementById('formStatus');
+                    const submitBtn = document.getElementById('submitBtn');
+
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('opacity-60');
+                    statusEl.textContent = 'Sending...';
+
+                    const xhr = new XMLHttpRequest();
+                    const data = new FormData(form);
+
+                    xhr.open('POST', form.action, true);
+
+                    xhr.onload = function () {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-60');
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            // Try parse JSON response if present
+                            try {
+                                const json = JSON.parse(xhr.responseText);
+                                if (json && json.result && json.result.toLowerCase() === 'success') {
+                                    statusEl.textContent = '✅ Message sent successfully!';
+                                } else {
+                                    statusEl.textContent = '✅ Message sent!';
+                                }
+                            } catch (err) {
+                                statusEl.textContent = '✅ Message sent!';
+                            }
+                            form.reset();
+                        } else {
+                            statusEl.textContent = '❌ Submission failed. Server returned ' + xhr.status;
+                        }
+                    };
+
+                    xhr.onerror = function () {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-60');
+                        statusEl.textContent = '❌ Network error. Please try again.';
+                    };
+
+                    xhr.timeout = 45000; // 45s
+                    xhr.ontimeout = function () {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-60');
+                        statusEl.textContent = '❌ Request timed out. Please try again.';
+                    };
+
+                    xhr.send(data);
+                });
+            }
+        });
+    </script>
+</html>

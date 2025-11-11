@@ -1,0 +1,72 @@
+:root {
+    --primary: 220 90% 56%;
+    --primary-dark: 220 70% 35%;
+    --accent: 260 80% 60%;
+    --bg-dark: 220 20% 8%;
+    --bg-darker: 220 25% 4%;
+    --text-light: 0 0% 95%;
+    --text-muted: 0 0% 65%;
+    --gradient-primary: linear-gradient(135deg, #007BFF 0%, #007BFF 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220, 25%, 4%) 0%, hsl(220, 20%, 8%) 100%);
+}
+
+/* Base reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    background: hsl(var(--bg-darker));
+    color: hsl(var(--text-light));
+    overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'Space Grotesk', sans-serif; }
+
+/* Utilities used across pages */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.glass {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.smooth-scroll { scroll-behavior: smooth; }
+
+/* Grain overlay used for subtle texture */
+.grain {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; opacity: 0.03; z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Small component rules shared by article pages */
+article p { margin-bottom: 1.5rem; line-height: 1.8; }
+article h2 { margin-top: 3rem; margin-bottom: 1.5rem; }
+article h3 { margin-top: 2rem; margin-bottom: 1rem; }
+
+/* Cards / interactive items */
+.faq-item { transform-origin: center; will-change: transform, opacity; backface-visibility: hidden; transition: all 0.3s ease; }
+.faq-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.news-card, .insight-card, .service-card { transform-origin: center; will-change: transform, opacity; backface-visibility: hidden; }
+
+/* helpers for animations initial state */
+.animate-hidden { opacity: 0; visibility: hidden; }
+
+/* Minor layout niceties (kept minimal because Tailwind provides most utilities) */
+.shadow-glow { box-shadow: 0 0 60px hsl(220 90% 56% / 0.3); }
+
+/* Related articles section */
+.related-articles > * {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.5s ease-out;
+}
+
+/* Keep space for page-specific inline gradients or background styles used via style="..." on elements */
+/* End of consolidated styles */

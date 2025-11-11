@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVision - Innovating Tomorrow's Software</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+        <!-- SEO: Meta description, Open Graph and JSON-LD Organization -->
+        <meta name="description" content="TechVision builds innovative custom software, mobile apps, and cloud solutions that transform businesses. Partner with us to bring your product ideas to life.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="/index.html">
+        <meta property="og:title" content="TechVision - Innovating Tomorrow's Software">
+        <meta property="og:description" content="TechVision builds innovative custom software, mobile apps, and cloud solutions that transform businesses.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/index.html">
+        <meta property="og:image" content="/assets/logo.svg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="TechVision - Innovating Tomorrow's Software">
+        <meta name="twitter:description" content="TechVision builds innovative custom software, mobile apps, and cloud solutions that transform businesses.">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "TechVision",
+            "url": "/",
+            "logo": "/assets/logo.svg"
+        }
+        </script>
+</head>
+<body class="smooth-scroll">
+    <div class="grain"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="w-32">
+                    <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Services</a>
+                    <a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">News</a>
+                    <a href="careers.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Careers</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="md:hidden mobile-menu hidden">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="index.html" class="block text-white hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="services.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Services</a>
+                    <a href="about.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="news.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">News</a>
+                    <a href="careers.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Careers</a>
+                    <a href="contact.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Background image from assets with a dark overlay to keep hero text readable -->
+            <div class="absolute inset-0 overflow-hidden">
+                <!-- Video background (autoplay, muted, loop). No poster to avoid PNG fallback; overlay keeps text readable. -->
+                <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+                    <source src="assets/home.mp4" type="video/mp4">
+                    <!-- If the browser can't play video, the overlay color will show instead. -->
+                </video>
+                <div class="absolute inset-0" style="background: linear-gradient(rgba(2,6,23,0.55), rgba(2,6,23,0.55));"></div>
+            </div>
+            <div class="hero-grid absolute inset-0 opacity-30" style="background-image: linear-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.15) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 z-10 text-center">
+            <div class="hero-content">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+                    <span class="hero-title-1">Building the</span><br>
+                    <span class="hero-title-2 gradient-text">Future of Software</span>
+                </h1>
+                <p class="hero-subtitle text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
+                    We craft innovative solutions that transform businesses and shape tomorrow's digital landscape
+                </p>
+                <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105" style="background: var(--gradient-primary);">
+                        Explore Our Work <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="px-8 py-4 rounded-full border border-white/20 text-white font-semibold transition-all duration-300 hover:bg-white/10 hover:scale-105">
+                        Get Started <i class="fas fa-play ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+       
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 stats-container">
+                <div class="text-center stat-item">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">500+</div>
+                    <div class="text-gray-400 text-lg">Projects Delivered</div>
+                </div>
+                <div class="text-center stat-item">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">98%</div>
+                    <div class="text-gray-400 text-lg">Client Satisfaction</div>
+                </div>
+                <div class="text-center stat-item">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">50+</div>
+                    <div class="text-gray-400 text-lg">Team Members</div>
+                </div>
+                <div class="text-center stat-item">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">12</div>
+                    <div class="text-gray-400 text-lg">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 section-header">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    What We <span class="gradient-text">Create</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Cutting-edge solutions designed to accelerate your digital transformation
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 services-grid">
+                <div class="service-card glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                        <i class="fas fa-code text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Custom Software</h3>
+                    <p class="text-gray-400 leading-relaxed">Tailored solutions built to solve your unique business challenges with cutting-edge technology.</p>
+                </div>
+                
+                <div class="service-card glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                        <i class="fas fa-mobile-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Mobile Apps</h3>
+                    <p class="text-gray-400 leading-relaxed">Native and cross-platform applications that deliver exceptional user experiences.</p>
+                </div>
+                
+                <div class="service-card glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                        <i class="fas fa-cloud text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Cloud Solutions</h3>
+                    <p class="text-gray-400 leading-relaxed">Scalable cloud infrastructure and services that grow with your business needs.</p>
+                </div>
+                
+                <div class="service-card glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                        <i class="fas fa-brain text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI & Machine Learning</h3>
+                    <p class="text-gray-400 leading-relaxed">Intelligent systems that learn, adapt, and provide actionable insights for your business.</p>
+                </div>
+                
+                <div class="service-card glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Cybersecurity</h3>
+                    <p class="text-gray-400 leading-relaxed">Comprehensive security solutions to protect your digital assets and data.</p>
+                </div>
+                
+                <div class="service-card glass rounded-2xl p-8 hover:scale-105 transition-all duration-500 cursor-pointer">
+                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                        <i class="fas fa-chart-line text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Data Analytics</h3>
+                    <p class="text-gray-400 leading-relaxed">Transform raw data into powerful insights that drive informed business decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Solutions -->
+    <section class="py-32 relative bg-gradient-to-b from-transparent to-black/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Industry <span class="gradient-text">Solutions</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Specialized expertise across diverse sectors</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6 industry-grid">
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-heartbeat text-4xl mb-4 text-blue-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Healthcare</h3>
+                    <p class="text-gray-400 text-sm">Patient management, telemedicine, and health analytics</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-university text-4xl mb-4 text-purple-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Finance</h3>
+                    <p class="text-gray-400 text-sm">Fintech solutions, trading platforms, and risk management</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-shopping-cart text-4xl mb-4 text-green-400"></i>
+                    <h3 class="text-xl font-bold mb-2">E-Commerce</h3>
+                    <p class="text-gray-400 text-sm">Online marketplaces, payment systems, and logistics</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-graduation-cap text-4xl mb-4 text-yellow-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Education</h3>
+                    <p class="text-gray-400 text-sm">Learning management systems and e-learning platforms</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-industry text-4xl mb-4 text-orange-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Manufacturing</h3>
+                    <p class="text-gray-400 text-sm">IoT solutions, automation, and supply chain optimization</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-hotel text-4xl mb-4 text-pink-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Hospitality</h3>
+                    <p class="text-gray-400 text-sm">Booking systems, guest management, and CRM</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-plane text-4xl mb-4 text-cyan-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Travel</h3>
+                    <p class="text-gray-400 text-sm">Reservation platforms and travel management tools</p>
+                </div>
+                <div class="industry-card glass rounded-xl p-6 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-truck text-4xl mb-4 text-red-400"></i>
+                    <h3 class="text-xl font-bold mb-2">Logistics</h3>
+                    <p class="text-gray-400 text-sm">Fleet management, route optimization, and tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Process Section -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Our <span class="gradient-text">Process</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">A proven methodology that delivers results</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 process-grid">
+                <div class="process-card text-center">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-bold" style="background: var(--gradient-primary);">1</div>
+                    <h3 class="text-2xl font-bold mb-4">Discovery</h3>
+                    <p class="text-gray-400 leading-relaxed">We dive deep into understanding your business goals, challenges, and requirements through comprehensive consultation.</p>
+                </div>
+                <div class="process-card text-center">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-bold" style="background: var(--gradient-primary);">2</div>
+                    <h3 class="text-2xl font-bold mb-4">Strategy</h3>
+                    <p class="text-gray-400 leading-relaxed">Our team develops a tailored roadmap with clear milestones, technology stack, and resource allocation.</p>
+                </div>
+                <div class="process-card text-center">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-bold" style="background: var(--gradient-primary);">3</div>
+                    <h3 class="text-2xl font-bold mb-4">Execution</h3>
+                    <p class="text-gray-400 leading-relaxed">Agile development with regular sprints, continuous integration, and transparent communication throughout.</p>
+                </div>
+                <div class="process-card text-center">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl font-bold" style="background: var(--gradient-primary);">4</div>
+                    <h3 class="text-2xl font-bold mb-4">Launch</h3>
+                    <p class="text-gray-400 leading-relaxed">Seamless deployment, comprehensive testing, training, and ongoing support to ensure long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-32 relative bg-gradient-to-b from-black/20 to-transparent">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 tech-header">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    Technology <span class="gradient-text">Stack</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    We work with cutting-edge technologies to deliver exceptional results
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 tech-grid mb-16">
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-react text-5xl mb-4" style="color: #61DAFB;"></i>
+                    <div class="text-sm text-gray-400">React</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-node text-5xl mb-4" style="color: #68A063;"></i>
+                    <div class="text-sm text-gray-400">Node.js</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-python text-5xl mb-4" style="color: #3776AB;"></i>
+                    <div class="text-sm text-gray-400">Python</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-aws text-5xl mb-4" style="color: #FF9900;"></i>
+                    <div class="text-sm text-gray-400">AWS</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-docker text-5xl mb-4" style="color: #2496ED;"></i>
+                    <div class="text-sm text-gray-400">Docker</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fas fa-database text-5xl mb-4" style="color: #4DB33D;"></i>
+                    <div class="text-sm text-gray-400">MongoDB</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-angular text-5xl mb-4" style="color: #DD0031;"></i>
+                    <div class="text-sm text-gray-400">Angular</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-vuejs text-5xl mb-4" style="color: #4FC08D;"></i>
+                    <div class="text-sm text-gray-400">Vue.js</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-java text-5xl mb-4" style="color: #007396;"></i>
+                    <div class="text-sm text-gray-400">Java</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-php text-5xl mb-4" style="color: #777BB4;"></i>
+                    <div class="text-sm text-gray-400">PHP</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-laravel text-5xl mb-4" style="color: #FF2D20;"></i>
+                    <div class="text-sm text-gray-400">Laravel</div>
+                </div>
+                <div class="tech-item glass rounded-xl p-6 text-center hover:scale-110 transition-all duration-300">
+                    <i class="fab fa-kubernetes text-5xl mb-4" style="color: #326CE5;"></i>
+                    <div class="text-sm text-gray-400">Kubernetes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Success Stories -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Success <span class="gradient-text">Stories</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Real results from real partnerships</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 success-grid">
+                <div class="success-card glass rounded-2xl p-8">
+                    <div class="text-5xl font-bold gradient-text mb-4">300%</div>
+                    <h3 class="text-xl font-bold mb-3">Revenue Growth</h3>
+                    <p class="text-gray-400 mb-4">E-commerce platform helped client triple their online revenue in 12 months through AI-powered recommendations.</p>
+                    <div class="text-sm text-blue-400">Retail Industry</div>
+                </div>
+                <div class="success-card glass rounded-2xl p-8">
+                    <div class="text-5xl font-bold gradient-text mb-4">85%</div>
+                    <h3 class="text-xl font-bold mb-3">Cost Reduction</h3>
+                    <p class="text-gray-400 mb-4">Automated workflow solution reduced operational costs while improving efficiency and accuracy across departments.</p>
+                    <div class="text-sm text-blue-400">Manufacturing</div>
+                </div>
+                <div class="success-card glass rounded-2xl p-8">
+                    <div class="text-5xl font-bold gradient-text mb-4">2M+</div>
+                    <h3 class="text-xl font-bold mb-3">Active Users</h3>
+                    <p class="text-gray-400 mb-4">Mobile app achieved 2 million active users within first year, with 4.8-star rating across app stores.</p>
+                    <div class="text-sm text-blue-400">Social Media</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 testimonial-header">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    Client <span class="gradient-text">Stories</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Hear from businesses we've helped transform
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 testimonial-grid">
+                <div class="testimonial-card glass rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full mr-4" style="background: linear-gradient(135deg, hsl(220, 90%, 56%), hsl(260, 80%, 60%));"></div>
+                        <div>
+                            <div class="font-semibold">Sarah Johnson</div>
+                            <div class="text-sm text-gray-400">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "TechVision delivered beyond our expectations. Their innovative approach transformed our business operations completely."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full mr-4" style="background: linear-gradient(135deg, hsl(280, 80%, 56%), hsl(320, 70%, 60%));"></div>
+                        <div>
+                            <div class="font-semibold">Michael Chen</div>
+                            <div class="text-sm text-gray-400">CTO, DataFlow</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "Working with TechVision was a game-changer. Their expertise in AI and cloud solutions is unmatched."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full mr-4" style="background: linear-gradient(135deg, hsl(160, 80%, 56%), hsl(200, 70%, 60%));"></div>
+                        <div>
+                            <div class="font-semibold">Emma Rodriguez</div>
+                            <div class="text-sm text-gray-400">Founder, HealthPlus</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        "The team's dedication and technical prowess helped us launch our healthcare platform ahead of schedule."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-32 relative bg-gradient-to-b from-transparent to-black/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Awards & <span class="gradient-text">Recognition</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Industry-leading excellence</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 awards-grid">
+                <div class="award-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-trophy text-5xl mb-4 text-yellow-400"></i>
+                    <h3 class="text-lg font-bold mb-2">Best Software Company 2024</h3>
+                    <p class="text-sm text-gray-400">Tech Excellence Awards</p>
+                </div>
+                <div class="award-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-award text-5xl mb-4 text-blue-400"></i>
+                    <h3 class="text-lg font-bold mb-2">Innovation Leader</h3>
+                    <p class="text-sm text-gray-400">Digital Transformation Summit</p>
+                </div>
+                <div class="award-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-medal text-5xl mb-4 text-purple-400"></i>
+                    <h3 class="text-lg font-bold mb-2">Top AI Solution Provider</h3>
+                    <p class="text-sm text-gray-400">AI Innovation Conference</p>
+                </div>
+                <div class="award-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-star text-5xl mb-4 text-green-400"></i>
+                    <h3 class="text-lg font-bold mb-2">Client Choice Award</h3>
+                    <p class="text-sm text-gray-400">Customer Satisfaction Index</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Insights -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">Latest <span class="gradient-text">Insights</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Stay updated with industry trends</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 insights-grid" id="insights-grid">
+                <!-- Dynamically populated from news index -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center cta-section">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                Ready to <span class="gradient-text">Transform</span> Your Business?
+            </h2>
+            <p class="text-xl text-gray-400 mb-12">
+                Let's build something amazing together
+            </p>
+            <button class="px-12 py-5 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: var(--gradient-primary);">
+                Start Your Project <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="block mb-4 w-32">
+                        <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">Innovating tomorrow's software solutions today.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Careers</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors">News</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Custom Software</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Cloud Solutions</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">AI & ML</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechVision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero animations
+        const tl = gsap.timeline();
+        tl.from('.hero-title-1', { y: 100, opacity: 0, duration: 1, ease: 'power3.out' })
+          .from('.hero-title-2', { y: 100, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.5')
+          .from('.hero-subtitle', { y: 50, opacity: 0, duration: 0.8, ease: 'power2.out' }, '-=0.5')
+          .from('.hero-cta', { y: 30, opacity: 0, duration: 0.8, ease: 'power2.out' }, '-=0.3');
+        
+        // Parallax effect on hero
+        gsap.to('.hero-grid', {
+            y: 200,
+            scrollTrigger: {
+                trigger: 'section',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+        
+        // Stats animation - FIXED: removed toggleActions that was causing opacity issues
+        gsap.from('.stat-item', {
+            scrollTrigger: {
+                trigger: '.stats-container',
+                start: 'top 80%',
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out'
+        });
+        
+        // Services cards animation
+        gsap.to('.service-card', {
+            scrollTrigger: {
+                trigger: '.services-grid',
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 0,
+            opacity: 1,
+            visibility: 'visible',
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out'
+        });
+        
+        // Industry cards animation
+        gsap.to('.industry-card', {
+            scrollTrigger: {
+                trigger: '.industry-grid',
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            scale: 1,
+            opacity: 1,
+            visibility: 'visible',
+            duration: 1,
+            stagger: 0.1,
+            ease: 'back.out(1.7)'
+        });
+        
+        
+        // Process cards animation
+        gsap.to('.process-card', {
+            scrollTrigger: {
+                trigger: '.process-grid',
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            y: 0,
+            opacity: 1,
+            visibility: 'visible',
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power2.out'
+        });
+        
+        // Tech grid animation
+        gsap.to('.tech-item', {
+            scrollTrigger: {
+                trigger: '.tech-grid',
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            scale: 1,
+            opacity: 1,
+            visibility: 'visible',
+            duration: 1,
+            stagger: 0.08,
+            ease: 'back.out(1.7)'
+        });
+        
+        // Success stories - FIXED
+        gsap.from('.success-card', {
+            scrollTrigger: {
+                trigger: '.success-grid',
+                start: 'top 80%',
+            },
+            y: 80,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+        
+        // Testimonials animation - FIXED
+        gsap.from('.testimonial-card', {
+            scrollTrigger: {
+                trigger: '.testimonial-grid',
+                start: 'top 80%',
+            },
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out'
+        });
+        
+        // Awards - FIXED
+        gsap.from('.award-card', {
+            scrollTrigger: {
+                trigger: '.awards-grid',
+                start: 'top 80%',
+            },
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: 'back.out(1.4)'
+        });
+        
+        // Insights - FIXED
+        gsap.from('.insight-card', {
+            scrollTrigger: {
+                trigger: '.insights-grid',
+                start: 'top 80%',
+            },
+            y: 80,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+        
+        // CTA animation - FIXED
+        gsap.from('.cta-section', {
+            scrollTrigger: {
+                trigger: '.cta-section',
+                start: 'top 80%',
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.out'
+        });
+        
+        // Initialize all animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset initial states for all animated elements
+            gsap.set('.service-card, .industry-card, .process-card, .tech-item, .insight-card', {
+                opacity: 0,
+                y: 50,
+                scale: 0.95
+            });
+
+            // Services Grid Animation
+            gsap.to('.services-grid .service-card', {
+                scrollTrigger: {
+                    trigger: '.services-grid',
+                    start: 'top 85%',
+                    toggleActions: 'play complete none reverse'
+                },
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                stagger: {
+                    each: 0.2,
+                    from: "start"
+                },
+                ease: 'power2.out'
+            });
+
+            // Industry Grid Animation
+            gsap.to('.industry-grid .industry-card', {
+                scrollTrigger: {
+                    trigger: '.industry-grid',
+                    start: 'top 85%',
+                    toggleActions: 'play complete none reverse'
+                },
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                stagger: {
+                    each: 0.15,
+                    from: "start"
+                },
+                ease: 'power2.out'
+            });
+
+            // Process Grid Animation
+            gsap.to('.process-grid .process-card', {
+                scrollTrigger: {
+                    trigger: '.process-grid',
+                    start: 'top 85%',
+                    toggleActions: 'play complete none reverse'
+                },
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                stagger: {
+                    each: 0.2,
+                    from: "start"
+                },
+                ease: 'power2.out'
+            });
+
+            // Tech Grid Animation
+            gsap.to('.tech-grid .tech-item', {
+                scrollTrigger: {
+                    trigger: '.tech-grid',
+                    start: 'top 85%',
+                    toggleActions: 'play complete none reverse'
+                },
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                stagger: {
+                    each: 0.1,
+                    from: "start"
+                },
+                ease: 'power2.out'
+            });
+
+            // Latest Insights Animation
+            const insightCards = document.querySelectorAll('.insight-card');
+            insightCards.forEach(card => {
+                gsap.set(card, { opacity: 0, y: 50, scale: 0.95 }); // Set initial state
+            });
+            
+            gsap.to('.insight-card', {
+                scrollTrigger: {
+                    trigger: '.insights-grid',
+                    start: 'top 85%',
+                    end: 'bottom center',
+                    toggleActions: 'play complete none reverse',
+                    markers: false
+                },
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                stagger: {
+                    amount: 0.6,
+                    from: "start"
+                },
+                ease: 'power3.out',
+                clearProps: "all" // Clear properties after animation
+            });
+
+            // Section headers animation
+            gsap.utils.toArray('.section-header, .tech-header, .testimonial-header').forEach(header => {
+                gsap.to(header, {
+                    scrollTrigger: {
+                        trigger: header,
+                        start: 'top 85%',
+                        toggleActions: 'play complete none reverse'
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Load Latest Insights from news index
+            async function loadLatestInsights() {
+                try {
+                    const response = await fetch('news/news-index.json');
+                    if (!response.ok) throw new Error('Failed to load news index');
+                    const articles = await response.json();
+                    
+                    const insightsGrid = document.getElementById('insights-grid');
+                    insightsGrid.innerHTML = '';
+                    
+                    // Show first 3 articles (limit to 3 for the grid)
+                    articles.slice(0, 3).forEach(article => {
+                        const link = document.createElement('a');
+                        link.href = article.url;
+                        link.className = 'insight-card glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500';
+                        link.innerHTML = `
+                            <div class="h-48" style="background-image: url('${article.thumbnail}'); background-size: cover; background-position: center;"></div>
+                            <div class="p-6">
+                                <div class="text-xs text-blue-400 mb-2">${article.category || 'TECH'}</div>
+                                <h3 class="text-xl font-bold mb-2">${article.title}</h3>
+                                <p class="text-gray-400 text-sm">${article.description}</p>
+                            </div>
+                        `;
+                        insightsGrid.appendChild(link);
+                    });
+
+                    // Animate insight cards
+                    const insightCards = document.querySelectorAll('.insight-card');
+                    insightCards.forEach(card => {
+                        gsap.set(card, { opacity: 0, y: 50, scale: 0.95 });
+                    });
+
+                    gsap.to('.insight-card', {
+                        scrollTrigger: {
+                            trigger: '.insights-grid',
+                            start: 'top 85%',
+                            end: 'bottom center',
+                            toggleActions: 'play complete none reverse',
+                            markers: false
+                        },
+                        y: 0,
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1,
+                        stagger: {
+                            amount: 0.6,
+                            from: "start"
+                        },
+                        ease: 'power3.out',
+                        clearProps: "all"
+                    });
+
+                } catch (error) {
+                    console.error('Error loading insights:', error);
+                    document.getElementById('insights-grid').innerHTML = '<p class="text-center text-gray-400">Unable to load insights.</p>';
+                }
+            }
+
+            // Load insights when DOM is ready
+            loadLatestInsights();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apply - TechVision</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- SEO: Meta description, Open Graph and JSON-LD Organization -->
+  <meta name="description" content="Apply to open roles at TechVision. Submit your resume and a short message for consideration for engineering, design, and product positions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="/apply.html">
+  <meta property="og:title" content="Apply - TechVision careers">
+  <meta property="og:description" content="Apply to open roles at TechVision. Submit your resume and a short message for consideration.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/apply.html">
+  <meta property="og:image" content="/assets/logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apply - TechVision careers">
+  <meta name="twitter:description" content="Apply to open roles at TechVision. Submit your resume and a short message for consideration.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TechVision",
+    "url": "/",
+    "logo": "/assets/logo.svg"
+  }
+  </script>
+  <style>
+    /* Make select and its options use translucent white to match the glass look */
+    select, select option {
+      background-color: rgba(255,255,255,0.05) !important;
+      color: #000000 !important;
+    }
+    /* Remove native appearance so we can show a custom chevron */
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 2.5rem; /* room for chevron */
+    }
+    /* wrapper for select to position chevron */
+    .select-wrap{ position: relative; }
+    .select-wrap .select-arrow{
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="w-32"><img src="assets/logo.svg" alt="TechVision" class="w-full"></a>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a>
+          <a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Services</a>
+          <a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About</a>
+          <a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors">News</a>
+          <a href="careers.html" class="text-white hover:text-blue-400 transition-colors">Careers</a>
+          <a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-32 pb-20 relative">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-6xl md:text-7xl font-bold mb-6 hero-title">Apply to <span class="gradient-text">TechVision</span></h1>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto hero-subtitle">Join our team — submit your application and resume below.</p>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+  <div class="flex justify-center gap-16 items-start">
+        <div class="form-container">
+          <h2 class="text-3xl font-bold mb-8">Apply Now</h2>
+          <form id="careerForm" action="https://script.google.com/macros/s/AKfycbzHp6iXwqd77qpYQIzcBJRMPbzhOYWzdF1NmaMlmat8kA2HHWLozNOvFMVw9TJKXuMq/exec" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <div class="form-group">
+              <label class="block text-sm font-semibold mb-2">Full name</label>
+              <input name="name" type="text" placeholder="Full Name" required class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all">
+            </div>
+
+            <div class="form-group">
+              <label class="block text-sm font-semibold mb-2">Email</label>
+              <input name="email" type="email" placeholder="you@example.com" required class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all">
+            </div>
+
+            <div class="form-group">
+              <label class="block text-sm font-semibold mb-2">Position</label>
+              <select name="position" required class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all">
+                <option value="">-- Select a role --</option>
+                <option value="Senior Full Stack Developer">Senior Full Stack Developer</option>
+                <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                <option value="UI/UX Designer">UI/UX Designer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="block text-sm font-semibold mb-2">Short message / cover letter</label>
+              <textarea name="message" rows="4" class="w-full px-6 py-4 rounded-xl glass focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="Optional"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="block text-sm font-semibold mb-2">Resume (PDF / DOC)</label>
+              <input id="resumeInput" type="file" name="resume" accept=".pdf,.doc,.docx" required class="w-full text-gray-700 mt-1">
+            </div>
+
+            <button id="submitBtn" type="submit" class="w-full px-8 py-5 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105" style="background: var(--gradient-primary);">Submit Application</button>
+            <p id="formStatus" class="text-sm text-left mt-2 text-gray-400"></p>
+          </form>
+        </div>
+
+           </div>
+    </div>
+  </section>
+
+    <footer class="border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="home.html" class="block mb-4 w-32">
+                        <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">Innovating tomorrow's software solutions today.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Careers</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors">News</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Custom Software</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Cloud Solutions</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">AI & ML</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechVision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+  <script>
+    // Use XMLHttpRequest to enable upload progress monitoring (keeps behavior from original apply.html)
+    document.getElementById('careerForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const statusEl = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
+
+      // Basic client-side validation
+      const resumeInput = document.getElementById('resumeInput');
+      if (!resumeInput.files || resumeInput.files.length === 0) {
+        statusEl.textContent = 'Please attach your resume.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-60');
+      statusEl.textContent = 'Uploading...';
+
+      const xhr = new XMLHttpRequest();
+      const data = new FormData(form);
+
+      xhr.open('POST', form.action, true);
+
+      xhr.onload = function () {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60');
+        try {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            let json = null;
+            try { json = JSON.parse(xhr.responseText); } catch (err) { /* not JSON */ }
+            if (json && json.result && json.result.toLowerCase() === 'success') {
+              statusEl.textContent = '✅ Application submitted successfully!';
+            } else if (xhr.responseText && xhr.responseText.toLowerCase().includes('success')) {
+              statusEl.textContent = '✅ Application submitted successfully!';
+            } else {
+              statusEl.textContent = '✅ Application submitted (server returned 200).';
+            }
+            form.reset();
+            setTimeout(() => { window.location.href = 'careers.html'; }, 1400);
+          } else {
+            statusEl.textContent = '❌ Submission failed. Server returned ' + xhr.status;
+          }
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent = '❌ Unexpected response. Check console.';
+        }
+      };
+
+      xhr.onerror = function () {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60');
+        statusEl.textContent = '❌ Network error. Please try again.';
+      };
+
+      xhr.timeout = 60000; // 60s
+      xhr.ontimeout = function () {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60');
+        statusEl.textContent = '❌ Upload timed out. Please try again.';
+      };
+
+      xhr.send(data);
+    });
+  </script>
+</body>
+</html>

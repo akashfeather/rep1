@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechVision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+        <!-- SEO: Meta description, Open Graph and JSON-LD Organization -->
+        <meta name="description" content="Learn about TechVision—our mission, team and history of building transformative software solutions since 2012.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="/about.html">
+        <meta property="og:title" content="About TechVision - Mission & Team">
+        <meta property="og:description" content="Learn about TechVision—our mission, team and history of building transformative software solutions.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/about.html">
+        <meta property="og:image" content="/assets/logo.svg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="About TechVision - Mission & Team">
+        <meta name="twitter:description" content="Learn about TechVision—our mission, team and history of building transformative software solutions.">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "TechVision",
+            "url": "/",
+            "logo": "/assets/logo.svg"
+        }
+        </script>
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <nav class="fixed top-0 left-0 right-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="w-32">
+                    <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Services</a>
+                    <a href="about.html" class="text-white hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">News</a>
+                    <a href="careers.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Careers</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white mobile-menu-button"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+            <div class="md:hidden mobile-menu hidden">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="index.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="services.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Services</a>
+                    <a href="about.html" class="block text-white hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="news.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">News</a>
+                    <a href="careers.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Careers</a>
+                    <a href="contact.html" class="block text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="assets/js/mobile-menu.js"></script>
+
+    <section class="pt-32 pb-20 relative">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 hero-title">About <span class="gradient-text">TechVision</span></h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto hero-subtitle">Pioneering innovation through technology since 2012</p>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-32 mission-section">
+                <div class="glass rounded-2xl p-12 h-96 flex flex-col justify-center">
+                    <i class="fas fa-bullseye text-7xl mb-6 opacity-30"></i>
+                    <h3 class="text-3xl font-bold mb-4">Our Mission</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">To empower businesses with innovative technology solutions that drive growth, efficiency, and digital transformation.</p>
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Who We Are</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        TechVision is a leading software development company with over 12 years of experience in delivering cutting-edge solutions to businesses worldwide. Our team of expert developers, designers, and consultants work together to bring your vision to life.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        We believe in the power of technology to transform businesses and create meaningful impact. From startups to Fortune 500 companies, we've helped organizations across industries achieve their digital transformation goals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-32 values-section">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Our <span class="gradient-text">Values</span></h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass rounded-2xl p-8 value-card">
+                        <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                            <i class="fas fa-lightbulb text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Innovation</h3>
+                        <p class="text-gray-400 leading-relaxed">We constantly push boundaries and explore new technologies to deliver forward-thinking solutions.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-8 value-card">
+                        <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                            <i class="fas fa-users text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Collaboration</h3>
+                        <p class="text-gray-400 leading-relaxed">We work closely with our clients as partners, fostering transparent communication and shared success.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-8 value-card">
+                        <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                            <i class="fas fa-award text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Excellence</h3>
+                        <p class="text-gray-400 leading-relaxed">We are committed to delivering the highest quality in everything we do, from code to customer service.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-8 value-card">
+                        <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                            <i class="fas fa-hand-holding-heart text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Integrity</h3>
+                        <p class="text-gray-400 leading-relaxed">We operate with honesty and transparency, building trust with every interaction and decision.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-8 value-card">
+                        <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                            <i class="fas fa-rocket text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Agility</h3>
+                        <p class="text-gray-400 leading-relaxed">We adapt quickly to changing needs and market conditions, ensuring your projects stay on track.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-8 value-card">
+                        <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                            <i class="fas fa-globe text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Impact</h3>
+                        <p class="text-gray-400 leading-relaxed">We create solutions that make a real difference to businesses and their customers worldwide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-32 team-section">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Meet Our <span class="gradient-text">Leadership</span></h2>
+                <p class="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">Experienced leaders driving innovation and excellence</p>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center team-card">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4" style="background: linear-gradient(135deg, hsl(220, 90%, 56%), hsl(260, 80%, 60%));"></div>
+                        <h3 class="text-xl font-bold mb-2">John Anderson</h3>
+                        <p class="text-gray-400 mb-4">CEO & Founder</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-card">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4" style="background: linear-gradient(135deg, hsl(280, 80%, 56%), hsl(320, 70%, 60%));"></div>
+                        <h3 class="text-xl font-bold mb-2">Sarah Martinez</h3>
+                        <p class="text-gray-400 mb-4">CTO</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-card">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4" style="background: linear-gradient(135deg, hsl(160, 80%, 56%), hsl(200, 70%, 60%));"></div>
+                        <h3 class="text-xl font-bold mb-2">David Kim</h3>
+                        <p class="text-gray-400 mb-4">VP of Engineering</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-card">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4" style="background: linear-gradient(135deg, hsl(40, 90%, 56%), hsl(20, 80%, 60%));"></div>
+                        <h3 class="text-xl font-bold mb-2">Emily Chen</h3>
+                        <p class="text-gray-400 mb-4">Head of Design</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Our <span class="gradient-text">Journey</span></h2>
+                <div class="space-y-16 max-w-4xl mx-auto">
+                    <div class="flex gap-8 timeline-item">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <div class="text-3xl font-bold gradient-text">2012</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex-1">
+                            <h3 class="text-2xl font-bold mb-3">Company Founded</h3>
+                            <p class="text-gray-400 leading-relaxed">TechVision was established with a mission to transform businesses through innovative software solutions.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 timeline-item">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <div class="text-3xl font-bold gradient-text">2015</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex-1">
+                            <h3 class="text-2xl font-bold mb-3">First Major Client</h3>
+                            <p class="text-gray-400 leading-relaxed">Secured our first Fortune 500 client, marking a significant milestone in company growth.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 timeline-item">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <div class="text-3xl font-bold gradient-text">2018</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex-1">
+                            <h3 class="text-2xl font-bold mb-3">Global Expansion</h3>
+                            <p class="text-gray-400 leading-relaxed">Opened offices in three continents, expanding our reach to serve clients worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 timeline-item">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <div class="text-3xl font-bold gradient-text">2021</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex-1">
+                            <h3 class="text-2xl font-bold mb-3">AI Innovation Lab</h3>
+                            <p class="text-gray-400 leading-relaxed">Launched dedicated AI and machine learning research lab to pioneer next-gen solutions.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 timeline-item">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <div class="text-3xl font-bold gradient-text">2024</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 flex-1">
+                            <h3 class="text-2xl font-bold mb-3">500+ Projects Delivered</h3>
+                            <p class="text-gray-400 leading-relaxed">Reached a major milestone of 500 successful projects delivered across various industries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center cta-section">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">Join Our <span class="gradient-text">Journey</span></h2>
+            <p class="text-xl text-gray-400 mb-12">We're always looking for talented individuals to join our team</p>
+            <button class="px-12 py-5 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105" style="background: var(--gradient-primary);">
+                View Careers <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="block mb-4 w-32">
+                        <img src="assets/logo.svg" alt="TechVision Logo" class="w-full h-auto">
+                    </a>
+                    <p class="text-gray-400 leading-relaxed">Innovating tomorrow's software solutions today.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">Careers</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-blue-400 transition-colors">News</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Custom Software</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Mobile Apps</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">Cloud Solutions</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400 transition-colors">AI & ML</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="w-10 h-10 glass rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechVision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.hero-title', { y: 100, opacity: 0, duration: 1, ease: 'power3.out' });
+        gsap.from('.hero-subtitle', { y: 50, opacity: 0, duration: 0.8, delay: 0.3, ease: 'power2.out' });
+        
+        gsap.from('.mission-section', {
+            scrollTrigger: { trigger: '.mission-section', start: 'top 80%', toggleActions: 'play none none reverse' },
+            y: 100, opacity: 0, duration: 1, ease: 'power3.out'
+        });
+        
+        gsap.from('.value-card', {
+            scrollTrigger: { trigger: '.values-section', start: 'top 80%', toggleActions: 'play none none reverse' },
+            y: 80, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out'
+        });
+        
+        gsap.from('.team-card', {
+            scrollTrigger: { trigger: '.team-section', start: 'top 80%', toggleActions: 'play none none reverse' },
+            scale: 0, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)'
+        });
+        
+        gsap.from('.timeline-item', {
+            scrollTrigger: { trigger: '.timeline-section', start: 'top 80%', toggleActions: 'play none none reverse' },
+            x: -100, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power2.out'
+        });
+        
+        gsap.from('.cta-section', {
+            scrollTrigger: { trigger: '.cta-section', start: 'top 80%', toggleActions: 'play none none reverse' },
+            scale: 0.9, opacity: 0, duration: 1, ease: 'power2.out'
+        });
+    </script>
+</body>
+</html>
