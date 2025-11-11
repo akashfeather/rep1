@@ -56,6 +56,14 @@ async function main(){
   const repoRoot = path.resolve(__dirname, '..');
   const newsDir = path.join(repoRoot, 'news');
   const outFile = path.join(newsDir, 'news-index.json');
+
+  // Map article filenames to their correct thumbnail images
+  const thumbnailMap = {
+    'news1.html': 'assets/motion design.png',
+    'news 2.html': 'assets/Digital Marketing.png',
+    'news 3.html': 'assets/app.png'
+  };
+
   try{
     const files = await fs.readdir(newsDir);
     const htmlFiles = files.filter(f => f.endsWith('.html') && f.toLowerCase() !== 'template.html');
@@ -71,7 +79,8 @@ async function main(){
           const st = await fs.stat(p);
           date = st.mtime.toISOString();
         }
-        let thumbnail = await extractThumbnail(content) || '';
+        // Use hardcoded thumbnail mapping if available, otherwise extract from HTML
+        let thumbnail = thumbnailMap[file] || (await extractThumbnail(content)) || '';
         // normalize thumbnail paths so they work from site root when consumed by news.html
         if(thumbnail){
           // Normalize thumbnail to a relative path (no leading slash) so it resolves correctly
