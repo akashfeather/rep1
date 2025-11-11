@@ -19,7 +19,7 @@
         <meta property="og:description" content="TechVision builds innovative custom software, mobile apps, and cloud solutions that transform businesses.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="/index.html">
-        <meta property="og:image" content="/assets/logo.svg">
+    <meta property="og:image" content="assets/logo.svg">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="TechVision - Innovating Tomorrow's Software">
         <meta name="twitter:description" content="TechVision builds innovative custom software, mobile apps, and cloud solutions that transform businesses.">
@@ -29,7 +29,7 @@
             "@type": "Organization",
             "name": "TechVision",
             "url": "/",
-            "logo": "/assets/logo.svg"
+            "logo": "assets/logo.svg"
         }
         </script>
 </head>
@@ -694,18 +694,7 @@
             ease: 'back.out(1.4)'
         });
         
-        // Insights - FIXED
-        gsap.from('.insight-card', {
-            scrollTrigger: {
-                trigger: '.insights-grid',
-                start: 'top 80%',
-            },
-            y: 80,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out'
-        });
+        // Insights animations are handled after the dynamic cards are rendered
         
         // CTA animation - FIXED
         gsap.from('.cta-section', {
