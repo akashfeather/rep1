@@ -58,10 +58,12 @@ async function main(){
   const outFile = path.join(newsDir, 'news-index.json');
 
   // Map article filenames to their correct thumbnail images
+  // Add your news files here with their thumbnail paths when you add new ones
   const thumbnailMap = {
     'news1.html': 'assets/motion design.png',
     'news 2.html': 'assets/Digital Marketing.png',
-    'news 3.html': 'assets/app.png'
+    'news 3.html': 'assets/app.png',
+    'news 4.html': 'assets/app.png'
   };
 
   try{
@@ -117,7 +119,12 @@ async function main(){
     items.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
     await fs.writeFile(outFile, JSON.stringify(items, null, 2), 'utf8');
-    console.log(`Wrote news index with ${items.length} items to ${outFile}`);
+    console.log(`✓ Wrote news index with ${items.length} items to ${outFile}`);
+    console.log('');
+    console.log('📰 News articles found:');
+    items.forEach((item, i) => {
+      console.log(`  ${i + 1}. ${item.title}`);
+    });
   }catch(err){
     console.error('Error generating news index', err);
     process.exit(1);

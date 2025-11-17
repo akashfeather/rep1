@@ -1,22 +1,62 @@
 # News scripts
 
-This folder contains small helper scripts to manage the `news/` directory.
+This folder contains helper scripts to manage the `news/` directory.
 
-Available:
+## `generate_news_index.js`
 
-- `generate_news_index.js` — Node script that scans the `news/` folder for `.html` files (excluding `template.html`) and writes `news/news-index.json` with metadata (title, date, description, thumbnail, url).
+Node script that scans the `news/` folder for `.html` files (excluding `template.html`) and writes `news/news-index.json` with metadata (title, date, description, thumbnail, url).
 
-How to run:
+### How to use
 
-1. From the project root run (requires Node.js installed):
+**Whenever you add a new news article:**
+
+1. Create your new `.html` file in the `news/` folder
+2. From the project root, run:
 
 ```powershell
 node scripts/generate_news_index.js
 ```
 
-2. Open the site with a local HTTP server (e.g. `npx serve` or `python -m http.server`) so `news/news-index.json` can be fetched by `news.html`.
+3. The script will automatically:
+   - Find all `.html` files in the `news/` folder
+   - Extract title, description, date, and thumbnail from meta tags
+   - Generate `news/news-index.json`
+   - Display all found articles
 
-Notes:
+**The `news.html` page will automatically display all articles from the index.**
 
-- The script extracts metadata from meta tags (`description`, `date`, `og:title`, `og:description`, `og:image`) where present and falls back to filesystem timestamps and the first paragraph.
-- If you add or remove a file in `news/`, re-run the script to update `news/news-index.json`.
+### Adding thumbnails for new articles
+
+To ensure your new article shows with the correct thumbnail:
+
+1. Add an entry to the `thumbnailMap` in `generate_news_index.js`:
+
+```javascript
+const thumbnailMap = {
+    'news1.html': 'assets/motion design.png',
+    'news 2.html': 'assets/Digital Marketing.png',
+    'news 3.html': 'assets/app.png',
+    'news 4.html': 'assets/app.png',
+    'your-article.html': 'assets/your-thumbnail.png'  // Add your file here
+};
+```
+
+2. Run the script again:
+
+```powershell
+node scripts/generate_news_index.js
+```
+
+### How it works
+
+- Extracts metadata from meta tags: `og:title`, `og:description`, `og:image`, `article:published_time`, or `date`
+- Falls back to `<title>`, first `<p>`, `<img>`, or file modification time if meta tags are missing
+- Sorts articles by date (newest first)
+- Normalizes paths so thumbnails work correctly
+- The script is idempotent — run it multiple times without issues
+
+### Notes
+
+- Requires **Node.js** installed on your machine
+- The `news.html` page fetches `news/news-index.json` via JavaScript to populate the news grid
+- Always run this script after adding, removing, or updating news files
