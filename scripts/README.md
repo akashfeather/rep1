@@ -58,5 +58,21 @@ node scripts/generate_news_index.js
 ### Notes
 
 - Requires **Node.js** installed on your machine
-- The `news.html` page fetches `news/news-index.json` via JavaScript to populate the news grid
-- Always run this script after adding, removing, or updating news files
+ - Requires **Node.js** installed on your machine
+ - Recommended: use the watcher to regenerate automatically when you add/remove/edit files
+
+## Recommended: automatic regeneration while developing
+
+To avoid running the generator manually each time you add a file, run the watcher. It regenerates the index whenever `.html` files in `news/` change:
+
+```powershell
+npm run watch-news
+```
+
+This runs `scripts/watch_news.js`, which runs the generator once immediately and then watches for changes.
+
+If you prefer a one-off generation, run:
+
+```powershell
+npm run generate-news
+```

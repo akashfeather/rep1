@@ -1,0 +1,9 @@
+{
+  "name": "memo-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "generate-news": "node scripts/generate_news_index.js",
+    "watch-news": "node scripts/watch_news.js"
+  }
+}
