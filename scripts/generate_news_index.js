@@ -55,7 +55,8 @@ async function extractThumbnail(html){
 async function main(){
   const repoRoot = path.resolve(__dirname, '..');
   const newsDir = path.join(repoRoot, 'news');
-  const outFile = path.join(newsDir, 'news-index.json');
+  const outJsonFile = path.join(newsDir, 'news-index.json');
+  const outJsFile = path.join(repoRoot, 'news-data.js');
 
   // Map article filenames to their correct thumbnail images
   // Add your news files here with their thumbnail paths when you add new ones
@@ -118,8 +119,19 @@ async function main(){
     // sort by date desc
     items.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
-    await fs.writeFile(outFile, JSON.stringify(items, null, 2), 'utf8');
-    console.log(`✓ Wrote news index with ${items.length} items to ${outFile}`);
+    // Write JSON file (for optional use with fetch)
+    await fs.writeFile(outJsonFile, JSON.stringify(items, null, 2), 'utf8');
+    
+    // Write JavaScript file for direct inclusion in HTML (no CORS issues!)
+    const jsContent = `// Auto-generated news data - DO NOT EDIT MANUALLY
+// Run: node scripts/generate_news_index.js
+const ARTICLES_DATA = ${JSON.stringify(items, null, 2)};
+`;
+    await fs.writeFile(outJsFile, jsContent, 'utf8');
+    
+    console.log(`✓ Wrote news index with ${items.length} items`);
+    console.log(`  - JSON: ${outJsonFile}`);
+    console.log(`  - JavaScript: ${outJsFile}`);
     console.log('');
     console.log('📰 News articles found:');
     items.forEach((item, i) => {

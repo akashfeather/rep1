@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test News Loading</title>
+</head>
+<body>
+    <h1>News Loading Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testNewsLoad() {
+            const results = document.getElementById('results');
+            
+            try {
+                results.innerHTML += '<p>Attempting to fetch news/news-index.json...</p>';
+                const response = await fetch('news/news-index.json');
+                results.innerHTML += `<p>Response status: ${response.status}</p>`;
+                
+                if (!response.ok) {
+                    results.innerHTML += `<p style="color: red;">Error: ${response.statusText}</p>`;
+                    return;
+                }
+                
+                const articles = await response.json();
+                results.innerHTML += `<p style="color: green;">✓ Successfully loaded ${articles.length} articles</p>`;
+                results.innerHTML += '<ul>';
+                articles.forEach(article => {
+                    results.innerHTML += `<li>${article.title}</li>`;
+                });
+                results.innerHTML += '</ul>';
+                
+            } catch (error) {
+                results.innerHTML += `<p style="color: red;">ERROR: ${error.message}</p>`;
+                results.innerHTML += `<p>Make sure you're serving the site via HTTP, not opening as file://</p>`;
+            }
+        }
+        
+        testNewsLoad();
+    </script>
+</body>
+</html>

@@ -36,6 +36,8 @@
             "logo": "assets/logo.svg"
         }
         </script>
+    <!-- Include auto-generated news data -->
+    <script src="news-data.js"></script>
 </head>
 <body>
     <div class="grain"></div>
@@ -194,12 +196,12 @@
         // Fetch and render news from index
         async function loadNewsIndex() {
             try {
-                const response = await fetch('news/news-index.json');
-                if (!response.ok) throw new Error('Failed to load news index');
-                const articles = await response.json();
+                // Use the auto-generated ARTICLES_DATA variable (from news-data.js)
+                const articles = ARTICLES_DATA;
                 
-                if (articles.length === 0) {
+                if (!articles || articles.length === 0) {
                     console.warn('No articles found in news index');
+                    document.getElementById('news-grid').innerHTML = '<p class="text-center text-gray-400">No news articles available.</p>';
                     return;
                 }
 
@@ -261,8 +263,8 @@
 
             } catch (error) {
                 console.error('Error loading news index:', error);
-                // Graceful fallback: show message or placeholder
-                document.getElementById('news-grid').innerHTML = '<p class="text-center text-gray-400">Unable to load news. Please try again later.</p>';
+                // Graceful fallback: show message
+                document.getElementById('news-grid').innerHTML = '<p class="text-center text-gray-400">Unable to load news. Please refresh the page.</p>';
             }
         }
 

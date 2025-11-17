@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test News Loading</title>
+    <script src="news-data.js"></script>
+</head>
+<body>
+    <h1>News Articles Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        const results = document.getElementById('results');
+        
+        if (typeof ARTICLES_DATA !== 'undefined' && ARTICLES_DATA.length > 0) {
+            results.innerHTML = `<p style="color: green;">✓ Successfully loaded ${ARTICLES_DATA.length} articles:</p>`;
+            results.innerHTML += '<ol>';
+            ARTICLES_DATA.forEach(article => {
+                results.innerHTML += `<li>${article.title}</li>`;
+            });
+            results.innerHTML += '</ol>';
+        } else {
+            results.innerHTML = '<p style="color: red;">✗ ERROR: ARTICLES_DATA not found or empty</p>';
+        }
+    </script>
+</body>
+</html>

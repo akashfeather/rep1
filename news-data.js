@@ -1,4 +1,6 @@
-[
+// Auto-generated news data - DO NOT EDIT MANUALLY
+// Run: node scripts/generate_news_index.js
+const ARTICLES_DATA = [
   {
     "filename": "news 2.html",
     "url": "news/news 2.html",
@@ -44,4 +46,4 @@
     "thumbnail": "assets/motion%20design.png",
     "category": ""
   }
-]
+];
