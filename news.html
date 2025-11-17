@@ -117,11 +117,15 @@
             <h2 class="text-5xl md:text-6xl font-bold mb-6">Subscribe to Our <span class="gradient-text">Newsletter</span></h2>
             <p class="text-xl text-gray-400 mb-12">Get the latest insights delivered to your inbox</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
-                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-full glass focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <button class="px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:scale-105" style="background: var(--gradient-primary);">
-                    Subscribe
-                </button>
+                <form id="subscribeForm" action="https://script.google.com/macros/s/AKfycbzHp6iXwqd77qpYQIzcBJRMPbzhOYWzdF1NmaMlmat8kA2HHWLozNOvFMVw9TJKXuMq/exec" method="POST" class="w-full flex gap-4">
+                    <input name="email" id="subscribeEmail" type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-full glass focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                    <input type="hidden" name="source" value="newsletter">
+                    <button id="subscribeBtn" type="submit" class="px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:scale-105" style="background: var(--gradient-primary);">
+                        Subscribe
+                    </button>
+                </form>
             </div>
+            <p id="subscribeStatus" class="text-sm text-center mt-3 text-gray-400"></p>
         </div>
     </section>
 
@@ -263,7 +267,77 @@
         }
 
         // Load news when DOM is ready
-        document.addEventListener('DOMContentLoaded', loadNewsIndex);
+        document.addEventListener('DOMContentLoaded', function () {
+            loadNewsIndex();
+
+            // Newsletter subscribe form handler (mirrors contact form behavior)
+            var subscribeForm = document.getElementById('subscribeForm');
+            var subscribeBtn = document.getElementById('subscribeBtn');
+            var subscribeStatus = document.getElementById('subscribeStatus');
+
+            if (subscribeForm) {
+                subscribeForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    if (!subscribeBtn) return;
+
+                    var emailInput = document.getElementById('subscribeEmail');
+                    var email = emailInput ? emailInput.value.trim() : '';
+                    if (!email) {
+                        if (subscribeStatus) subscribeStatus.textContent = 'Please enter a valid email.';
+                        return;
+                    }
+
+                    subscribeBtn.disabled = true;
+                    var originalBtnText = subscribeBtn.textContent;
+                    subscribeBtn.textContent = 'Sending...';
+                    if (subscribeStatus) subscribeStatus.textContent = 'Sending your subscription...';
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', subscribeForm.action);
+                    xhr.timeout = 45000; // 45s like contact form
+
+                    var formData = new FormData();
+                    formData.append('email', email);
+                    formData.append('source', 'newsletter');
+
+                    xhr.onload = function () {
+                        subscribeBtn.disabled = false;
+                        subscribeBtn.textContent = originalBtnText;
+                        try {
+                            var resp = JSON.parse(xhr.responseText || '{}');
+                            if (xhr.status >= 200 && xhr.status < 300 && (resp.result === 'success' || resp.status === 'success' || resp.ok)) {
+                                if (subscribeStatus) subscribeStatus.textContent = 'Thanks — you are subscribed!';
+                                if (emailInput) emailInput.value = '';
+                                return;
+                            }
+                        } catch (err) {
+                            // fall through to generic handling
+                        }
+
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            if (subscribeStatus) subscribeStatus.textContent = 'Thanks — you are subscribed!';
+                            if (emailInput) emailInput.value = '';
+                        } else {
+                            if (subscribeStatus) subscribeStatus.textContent = 'Sorry, something went wrong. Try again later.';
+                        }
+                    };
+
+                    xhr.onerror = function () {
+                        subscribeBtn.disabled = false;
+                        subscribeBtn.textContent = originalBtnText;
+                        if (subscribeStatus) subscribeStatus.textContent = 'Network error. Please try again.';
+                    };
+
+                    xhr.ontimeout = function () {
+                        subscribeBtn.disabled = false;
+                        subscribeBtn.textContent = originalBtnText;
+                        if (subscribeStatus) subscribeStatus.textContent = 'Request timed out. Please try again.';
+                    };
+
+                    xhr.send(formData);
+                });
+            }
+        });
     </script>
 </body>
 </html>

@@ -35,8 +35,8 @@
 <body>
     <div class="grain"></div>
     
-    <nav class="fixed top-0 left-0 right-0 z-50 glass">
-        <div class="max-w-7xl mx-auto px-6 py-4">
+    <nav class="navbar">
+        <div class="container-wide py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="w-32">
                     <img src="assets/logo.svg" alt="Memo InfoTech  Logo" class="w-full h-auto">
@@ -65,8 +65,8 @@
     </nav>
     <script src="assets/js/mobile-menu.js"></script>
 
-    <section class="pt-32 pb-20 relative">
-        <div class="max-w-7xl mx-auto px-6 text-center">
+    <section class="hero-section">
+        <div class="container-wide text-center">
             <h1 class="text-6xl md:text-7xl font-bold mb-6 hero-title">
                 Our <span class="gradient-text">Services</span>
             </h1>
@@ -76,11 +76,11 @@
         </div>
     </section>
 
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="section-py">
+        <div class="container-wide">
             <div class="grid lg:grid-cols-2 gap-16 items-center mb-32 service-section">
                 <div class="order-2 lg:order-1">
-                    <div class="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style="background: var(--gradient-primary);">
+                    <div class="icon-box mb-6">
                         <i class="fas fa-code text-3xl text-white"></i>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6">Custom Software Development</h2>
@@ -330,9 +330,9 @@
             <p class="text-xl text-gray-400 mb-12">
                 Ready to transform your ideas into reality?
             </p>
-            <button class="px-12 py-5 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105" style="background: var(--gradient-primary);">
-                Contact Us <i class="fas fa-arrow-right ml-2"></i>
-            </button>
+            <a href="contact.html" class="btn-primary px-12 py-5 text-white text-lg" aria-label="contact">
+                Contact <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
